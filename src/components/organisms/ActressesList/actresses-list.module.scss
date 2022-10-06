@@ -1,0 +1,74 @@
+@use "/src/styles/base/breakpoints" as breakpoints;
+@use "/src/styles/base/colors" as colors;
+@use "/src/styles/base/utilities" as utilities;
+@use "/src/styles/base/typography" as typography;
+
+.list {
+  padding: calc(5rem + 4%) 0 4% 0;
+  width: 100%;
+  height: auto;
+
+  &__container {
+    width: 100%;
+    max-width: breakpoints.$screen-max;
+    margin: 0 auto;
+    padding: 0 3%;
+  }
+
+  & h1 {
+    text-align: center;
+    font-size: 45px;
+    font-family: typography.$typography70;
+    color: colors.$primary;
+  }
+
+  &__actresses {
+    width: 100%;
+    margin-top: 3rem;
+    @include utilities.tecni-grid-params(grid, repeat(3, 1fr), 2rem, 2rem);
+    @include breakpoints.m-large {
+      @include utilities.tecni-grid-params(
+        grid,
+        repeat(2, 1fr),
+        1.5rem,
+        1.5rem
+      );
+    }
+    @include breakpoints.medium {
+      @include utilities.tecni-grid-params(grid, 1fr, 1rem, auto);
+    }
+
+    &Card {
+      width: 100%;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      & > div {
+        width: 100%;
+        height: 100%;
+        max-height: 25rem;
+        overflow: hidden;
+        &:last-child {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          color: transparent;
+          background: transparent;
+          transition: 0.3s;
+          font-family: typography.$typography30;
+          font-size: 25px;
+          @include utilities.tecni-flexbox-params(flex, center, center);
+          &:hover {
+            background: colors.$gray10;
+            backdrop-filter: blur(8px);
+            color: colors.$gray70;
+          }
+        }
+        & > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

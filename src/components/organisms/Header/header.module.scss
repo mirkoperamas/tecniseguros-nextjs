@@ -8,11 +8,15 @@
   height: 5rem;
   background: rgba(157, 40, 52, 0.85);
   @include utilities.tecni-flexbox-params(flex, center, auto);
+  position: fixed;
+  top: 0;
+  z-index: 100000;
 
   &__container {
     width: 100%;
     max-width: breakpoints.$screen-max;
     margin: 0 auto;
+    padding: 0 3%;
     @include utilities.tecni-grid-params(grid, 0.2fr 1.8fr, auto, auto);
   }
 
