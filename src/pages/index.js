@@ -25,8 +25,6 @@ export async function getStaticProps() {
     {
       actresses {
         id
-        country
-        date
         img
         name
       }

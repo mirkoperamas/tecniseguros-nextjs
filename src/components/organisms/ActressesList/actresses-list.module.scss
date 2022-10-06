@@ -60,9 +60,10 @@
           font-size: 25px;
           @include utilities.tecni-flexbox-params(flex, center, center);
           &:hover {
-            background: colors.$gray10;
+            background: rgba(210, 208, 208, 0.808);
             backdrop-filter: blur(8px);
-            color: colors.$gray70;
+            color: colors.$white;
+            text-shadow: 1px 1px colors.$black;
           }
         }
         & > img {
