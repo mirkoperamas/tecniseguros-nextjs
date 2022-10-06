@@ -1,0 +1,35 @@
+@use "/src/styles/base/breakpoints" as breakpoints;
+@use "/src/styles/base/colors" as colors;
+@use "/src/styles/base/utilities" as utilities;
+@use "/src/styles/base/typography" as typography;
+
+.header {
+  width: 100%;
+  height: 5rem;
+  background: rgba(157, 40, 52, 0.85);
+  @include utilities.tecni-flexbox-params(flex, center, auto);
+
+  &__container {
+    width: 100%;
+    max-width: breakpoints.$screen-max;
+    margin: 0 auto;
+    @include utilities.tecni-grid-params(grid, 0.2fr 1.8fr, auto, auto);
+  }
+
+  &__links {
+    @include utilities.tecni-flexbox-params(flex, auto, flex-end);
+    gap: 0.8rem;
+    & > a {
+      text-decoration: none;
+      font-family: typography.$typography30;
+      font-size: 16px;
+      color: colors.$gray20;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: colors.$gray10;
+        text-shadow: 0.5px 0.5px colors.$black;
+      }
+    }
+  }
+}
