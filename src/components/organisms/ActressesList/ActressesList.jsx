@@ -7,14 +7,14 @@ export const ActressesList = ({ data }) => {
         <h1>Lista de Actrices</h1>
 
         <div className={classes.list__actresses}>
-          {data.actresses.map(({ id, name, img }) => {
+          {data.actresses.map((actress) => {
             return (
-              <div className={classes.list__actressesCard} key={id}>
+              <div className={classes.list__actressesCard} key={actress?.id}>
                 <div>
-                  <img src={img} alt={`actress-${id}`} />
+                  <img src={actress?.img} alt={`actress-${actress?.id}`} />
                 </div>
 
-                <div>{name}</div>
+                <div>{actress?.name}</div>
               </div>
             );
           })}
