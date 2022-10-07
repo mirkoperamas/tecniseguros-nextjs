@@ -12,7 +12,7 @@ export default function Home({ data }) {
 }
 
 // -----GRAPHQL CLIENT-----
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const endpoint = process.env.PREVIEW_CH_ENDPOINT;
 
   const graphQLClient = new GraphQLClient(endpoint);
